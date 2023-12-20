@@ -10,7 +10,9 @@
         var message = event.data;
 
         if (message === "get") {
-          console.log('da vao day');
+          console.log("message === get");
+          console.log(message);
+          console.log("message === get");
           var data = {};
           try {
             localStoragekeys.forEach(function (key) {
@@ -26,6 +28,9 @@
           } catch (error) {
             data["error"] = error;
           }
+          console.log('event.source.postMessage(data, event.origin)');
+          console.log(data);
+          console.log('event.source.postMessage(data, event.origin)');
           event.source.postMessage(data, event.origin);
           return;
         }
@@ -39,6 +44,9 @@
         delete message.spcdomain;
 
         try {
+          console.log("localStorage get set item");
+          console.log(message);
+          console.log("localStorage get set item");
           if (
             window.localStorage.getItem("spvid") === null &&
             message["spvid"]
