@@ -2,22 +2,15 @@
   <head>
     <meta name="robots" content="noindex,nofollow" />
     <script>
-      function sendCookieToDomainA() {
-        const cookieValue = document.cookie;
-        console.log("Cookie Value:", cookieValue);
-
-        window.localStorage.setItem("splid", '9e0be964-7141-4cd7-a9bb-9f0f377e7681');
-        window.parent.postMessage('lamlamlam', "*");
-      }
-
       function receiveMessage(event) {
-        console.log('da vao day');
+        console.log(event);
         var origin = event.origin;
         var localStoragekeys = ["spvid", "splid"];
         var sessionStoragekeys = ["spft"];
         var message = event.data;
 
         if (message === "get") {
+          console.log('da vao day');
           var data = {};
           try {
             localStoragekeys.forEach(function (key) {
@@ -70,7 +63,6 @@
         return;
       }
 
-      sendCookieToDomainA();
       window.addEventListener("message", receiveMessage);
     </script>
   </head>
