@@ -28,9 +28,9 @@
           } catch (error) {
             data["error"] = error;
           }
-          console.log('event.source.postMessage(data, event.origin)');
+          console.log("event.source.postMessage(data, event.origin)");
           console.log(data);
-          console.log('event.source.postMessage(data, event.origin)');
+          console.log("event.source.postMessage(data, event.origin)");
           event.source.postMessage(data, event.origin);
           return;
         }
@@ -46,6 +46,8 @@
         try {
           console.log("localStorage get set item");
           console.log(message);
+          var cookies = document.cookie;
+          console.log(cookies);
           console.log("localStorage get set item");
           if (
             window.localStorage.getItem("spvid") === null &&
